@@ -1,0 +1,61 @@
+1. 创建maven webapp 项目
+2. pom.xml修改
+	1) 修改junit 版本 为4.12
+	2）  添加
+		 <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+3. 修改 .settings 文件夹中文件
+	1） org.eclipse.jdt.core.prefs 
+		org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.5
+		org.eclipse.jdt.core.compiler.compliance=1.5
+		org.eclipse.jdt.core.compiler.source=1.5
+		-----
+		org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
+		org.eclipse.jdt.core.compiler.compliance=1.8
+		org.eclipse.jdt.core.compiler.source=1.8
+		版本号改为需要的项目版本 1.7 or 1.8
+	2) org.eclipse.wst.common.project.facet.core.xml
+		<installed facet="java" version="1.5"/> 
+  		<installed facet="jst.web" version="2.3"/>
+  		------
+  		<installed facet="java" version="1.8"/> 
+  		<installed facet="jst.web" version="3.1"/>
+  		java  version 修改为何1中相同的
+ 4. 项目骨架修改
+ 	设置jre版本java bulid path ,先remove 老版本，再添加新jre, 一定要 先apply在ok
+ 5. 设置maven项目编译版本，一劳永逸。
+ 	<build>
+		<finalName>maventest</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<fork>true</fork>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+6. 修改web.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+</web-app>
+
+7. pom文件
+
+8. 配置 web.xml
+9. applicationContext.xml
+	1) 添加命名空间
+10.spring-web.xml
+	1) 添加命名空间
+
+ 
+		
