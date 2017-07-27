@@ -24,12 +24,17 @@ public class UserController {
 	
 	@RequestMapping(value="/all", method=RequestMethod.GET)
 	@ResponseBody
-	public String users() {
-		
+	public List<User> users() {
 		List<User> users = userService.selectUsers();
-		
-		return users.toString();
+		return users;
 	}
+	
+	@RequestMapping(value="/chart", method=RequestMethod.GET)
+	public String chart() {
+		return "chart";
+	}
+	
+	
 	
 
 }

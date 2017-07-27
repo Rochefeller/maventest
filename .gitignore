@@ -1,0 +1,16 @@
+### For Java
+*.class
+/target/
+
+## for package
+*.war
+*.jar
+
+### For Eclipse
+.settings
+.claspath
+.project
+
+### For spring
+.springBeans
+
